@@ -16,6 +16,7 @@ function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
 
   async function login() {
@@ -33,8 +34,17 @@ function Login() {
 
     result = await result.json();
 
-    localStorage.setItem("user-info", JSON.stringify(result));
-    history("/add")
+    if (result.status === 200) {
+      localStorage.setItem("user-info", JSON.stringify(result.check));
+      history("/add")
+    }
+    else if(result.status === 404)
+    {
+      setMessage(result.error)
+    }
+
+    //localStorage.setItem("user-info", JSON.stringify(result));
+    
 
 
 
@@ -47,6 +57,7 @@ function Login() {
       <div className="col-sm-6 offset-sm-3" >
 
         <h1>Login</h1>
+        <h1>{message}</h1>
         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="Email" /> <br />
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" placeholder="Password" /> <br />
         <button onClick={login} className="btn btn-primary">Login</button>

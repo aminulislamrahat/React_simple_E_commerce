@@ -11,6 +11,7 @@ import Signup from './components/Signup';
 import PageNotFound from './components/PageNotFound';
 import ProductsDetails from './components/ProductsDetails';
 import UpdateOneProduct from './components/UpdateOneProduct';
+import SearchProduct from './components/SearchProduct';
 
 //import {Button} from 'react-bootstrap';
 
@@ -30,8 +31,7 @@ function App() {
 
           <Routes>
             <Route path="/" element={<ProductsList />} />
-
-
+            <Route path="/search" element={<SearchProduct />} />
 
             <Route path="/add" element={<Protected cmp={AddProduct} />} />
             <Route path="/update" element={<Protected cmp={UpdateProduct} />} />

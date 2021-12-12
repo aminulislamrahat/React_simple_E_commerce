@@ -69,7 +69,7 @@ function UpdateOneProduct() {
         formData.append('p_purchased', p_purchased);
         formData.append('file', file);
 
-        let result = await fetch("http://127.0.0.1:8000/api/lowdate/" + id + "?_method=PUT",
+        let result = await fetch("http://127.0.0.1:8000/api/update/" + id + "?_method=PUT",
             {
                 method: 'POST',
                 body: formData

@@ -34,10 +34,10 @@ function Signup() {
 
     result = await result.json();
 
-    localStorage.setItem("user-info", JSON.stringify(result));
-    history("/add")
-
-
+    if (result.status === 200) {
+      localStorage.setItem("user-info", JSON.stringify(result.member));
+      history("/add")
+    }
 
   }
 

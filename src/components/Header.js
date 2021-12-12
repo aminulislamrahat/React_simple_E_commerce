@@ -15,6 +15,7 @@ function Header() {
                 <Navbar.Brand ><Link className="btn btn-dark" to="/">Simple E-commerce</Link></Navbar.Brand>
                 <Nav className="me-auto navbar_warapper">
                     <Link className="btn btn-dark" to="/">Products List</Link>
+                    <Link className="btn btn-dark" to="/search">Search Products</Link>
                     {
                         localStorage.getItem('user-info') ?
                             <>
