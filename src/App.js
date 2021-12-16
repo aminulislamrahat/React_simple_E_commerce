@@ -13,7 +13,7 @@ import ProductsDetails from './components/ProductsDetails';
 import UpdateOneProduct from './components/UpdateOneProduct';
 import SearchProduct from './components/SearchProduct';
 
-//import {Button} from 'react-bootstrap';
+import Chat from './components/chat/chat';
 
 import './App.css';
 //import Testing from './components/Testing';
@@ -32,6 +32,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ProductsList />} />
             <Route path="/search" element={<SearchProduct />} />
+            <Route path="/chat" element={<Protected cmp={Chat} />} />
 
             <Route path="/add" element={<Protected cmp={AddProduct} />} />
             <Route path="/update" element={<Protected cmp={UpdateProduct} />} />
@@ -58,6 +59,7 @@ function App() {
 
         </BrowserRouter>
 
+        
 
       </div>
     </>

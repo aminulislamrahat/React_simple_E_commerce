@@ -21,6 +21,7 @@ function Header() {
                             <>
                                 <Link className="btn btn-dark" to="/add">Add Product</Link>
                                 <Link className="btn btn-dark" to="/update">update Product</Link>
+                                <Link className="btn btn-dark" to="/chat">Live Chat</Link>
                             </>
                             :
                             <>
@@ -28,6 +29,7 @@ function Header() {
                                 <Link className="btn btn-dark" to="/signup">Signup</Link>
                             </>
                     }
+                    
                 </Nav>
                 {localStorage.getItem('user-info') ?
                     <Nav className="me-auto">
